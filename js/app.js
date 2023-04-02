@@ -11,12 +11,14 @@ const guessLetters = document.querySelectorAll('.guess-letter')
 
 const keyboard = document.getElementById('keyboard')
 const resetBtn = document.getElementById('reset-button')
+const deleteBtn = document.getElementById('delete-button')
 
 
 /*--------- Event Listeners ---------*/
 
 resetBtn.addEventListener('click', init)
 keyboard.addEventListener('click', handleKeyboardClick)
+deleteBtn.addEventListener('click', deleteLetter)
 
 /*------------ Functions ------------*/
 
@@ -59,9 +61,10 @@ function handleKeyboardClick(evt) {
         if (evt.target.classList.contains('letter')) {
           console.log(evt.target.id)
           currentGuessWord[letterTurn].innerText = evt.target.id.toUpperCase()
+          letterTurn++
+          console.log(letterTurn)
         }
     }
-    letterTurn++
   }
 
 function createCurrentGuessWord () {
@@ -71,4 +74,13 @@ function createCurrentGuessWord () {
   
 function resetLetterTurn () {
     letterTurn = 0
+}
+
+function deleteLetter () {
+    console.log(`delete letter`)
+    if (letterTurn > 0){
+        currentGuessWord[letterTurn-1].innerText = ''
+        letterTurn = letterTurn - 1
+        console.log(letterTurn)
+    } 
 }
