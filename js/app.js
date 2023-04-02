@@ -3,8 +3,7 @@
 
 /*------------ Variables ------------*/
 
-let secretWord, guessNumber, guessedWord, guessBoardArr
-let currentGuessWord
+let secretWord, guessNumber, guessBoardArr, currentGuessWord, letterTurn
 
 /*---- Cached Element References ----*/
 const guessWords = Array.from(document.querySelectorAll('.guess-word'))
@@ -26,17 +25,16 @@ init ()
 function init () {
     secretWord = 'ariel'
     //change above to function later to pull with difficult
-    // guessNumber = 1
+    guessNumber = 0
+    letterTurn = 0
     setBoardArr()
     clearGuesses()
     render ()
 }
 
 function render () {
-    guessNumber = 0
     console.log(guessBoardArr)
     createCurrentGuessWord()
-    console.log(currentGuessWord)
 }
 
 
@@ -56,9 +54,13 @@ function clearGuesses () {
 }
 
 function handleKeyboardClick(evt) {
-    if (evt.target.classList.contains('letter')) {
-      console.log(evt.target.id);
+    if (letterTurn < 5) {
+        if (evt.target.classList.contains('letter')) {
+          console.log(evt.target.id)
+          currentGuessWord[letterTurn].innerText = evt.target.id.toUpperCase()
+        }
     }
+    letterTurn++
   }
 
 function createCurrentGuessWord () {
