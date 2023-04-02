@@ -25,7 +25,7 @@ init ()
 function init () {
     secretWord = 'ariel'
     //change above to function later to pull with difficult
-    guessNumber = 0
+    guessNumber = 1
     letterTurn = 0
     setBoardArr()
     clearGuesses()
@@ -35,6 +35,7 @@ function init () {
 function render () {
     console.log(guessBoardArr)
     createCurrentGuessWord()
+    resetLetterTurn()
 }
 
 
@@ -68,3 +69,6 @@ function createCurrentGuessWord () {
     return currentGuessWord
 }
   
+function resetLetterTurn () {
+    letterTurn = 0
+}
