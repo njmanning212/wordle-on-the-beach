@@ -3,19 +3,12 @@
 
 /*------------ Variables ------------*/
 
-let secretWord, guessNumber, guessedLetter, guessedWord
+let secretWord, guessNumber, guessedLetter, guessedWord, guessBoardArr
 
 
 /*---- Cached Element References ----*/
-const guessBoardArrStart = Array.from(document.querySelectorAll('.guess-word'))
-const guessBoardArr = guessBoardArrStart.map (function (word) {
-    let wordGuess = Array.from(word.querySelectorAll('.guess-letter'))
-    return wordGuess
-})
-
-// .map(word => Array.from(word.querySelectorAll('.guess-letter')))
-console.log(guessBoardArr)
-
+const guessWords = Array.from(document.querySelectorAll('.guess-word'))
+const guessLetters = document.querySelectorAll('.guess-letter')
 const resetBtn = document.getElementById('reset-button')
 
 
@@ -28,7 +21,27 @@ resetBtn.addEventListener('click', init)
 init ()
 
 function init () {
+    setBoardArr()
+    clearGuesses()
+    //change to function later to pull with difficulty
     secretWord = 'ariel'
     guessNumber = 0
     guessedWord = [null, null, null, null, null]
+}
+
+console.log(guessBoardArr)
+
+function setBoardArr () {
+    guessBoardArr = guessWords.map (function (word) {
+        let wordGuess = Array.from(word.querySelectorAll('.guess-letter'))
+        return wordGuess
+    })
+}
+
+function clearGuesses () {
+    guessBoardArr.forEach(function (word){
+        word.forEach(function (letter){
+            letter.textContent = ''
+        })
+    })
 }
