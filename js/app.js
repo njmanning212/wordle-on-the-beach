@@ -3,8 +3,8 @@
 
 /*------------ Variables ------------*/
 
-let secretWord, guessNumber, guessedLetter, guessedWord, guessBoardArr
-
+let secretWord, guessNumber, guessedWord, guessBoardArr
+let currentGuessWord
 
 /*---- Cached Element References ----*/
 const guessWords = Array.from(document.querySelectorAll('.guess-word'))
@@ -24,15 +24,21 @@ keyboard.addEventListener('click', handleKeyboardClick)
 init ()
 
 function init () {
+    secretWord = 'ariel'
+    //change above to function later to pull with difficult
+    // guessNumber = 1
     setBoardArr()
     clearGuesses()
-    //change to function later to pull with difficulty
-    secretWord = 'ariel'
-    guessNumber = 0
-    guessedWord = [null, null, null, null, null]
+    render ()
 }
 
-console.log(guessBoardArr)
+function render () {
+    guessNumber = 0
+    console.log(guessBoardArr)
+    createCurrentGuessWord()
+    console.log(currentGuessWord)
+}
+
 
 function setBoardArr () {
     guessBoardArr = guessWords.map (function (word) {
@@ -49,15 +55,14 @@ function clearGuesses () {
     })
 }
 
-// function handleKyboardClick (evt) {
-//     if (evt.target.classList.contains('letter')){
-//         console.log(evt.target.id)
-//     } 
-// }
-
 function handleKeyboardClick(evt) {
     if (evt.target.classList.contains('letter')) {
       console.log(evt.target.id);
     }
   }
+
+function createCurrentGuessWord () {
+    currentGuessWord = guessBoardArr[guessNumber]
+    return currentGuessWord
+}
   
