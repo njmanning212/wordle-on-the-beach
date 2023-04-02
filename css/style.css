@@ -57,9 +57,11 @@ main {
     width: 15%;
 }
 
-.keyboard {
+#keyboard {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 50%;
     height: 20%;
 }
