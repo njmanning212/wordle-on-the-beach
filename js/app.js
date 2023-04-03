@@ -3,7 +3,7 @@ import {getWord, checkWord} from "./data.js"
 
 /*------------ Variables ------------*/
 
-let secretWord, guessNumber, guessBoardArr, currentGuessWord, letterTurn
+let secretWord, guessNumber, guessBoardArr, currentGuessWord, letterTurn, streak
 
 /*---- Cached Element References ----*/
 const guessWords = Array.from(document.querySelectorAll('.guess-word'))
@@ -14,6 +14,8 @@ const deleteBtn = document.getElementById('delete-button')
 const sumbitBtn = document.getElementById('submit-button')
 const keyBoardLetters = document.querySelectorAll('.letter')
 const difficultySelector = document.getElementById('difficulty-selector')
+const modal = document.getElementById('modal')
+const streakNumber = document.getElementById('streak-number')
 
 /*--------- Event Listeners ---------*/
 
@@ -22,6 +24,8 @@ keyboard.addEventListener('click', handleKeyboardClick)
 deleteBtn.addEventListener('click', deleteLetter)
 sumbitBtn.addEventListener('click', submitGuess)
 difficultySelector.addEventListener('change', selectdifficulty)
+modal.addEventListener('click', closeModal)
+
 
 /*------------ Functions ------------*/
 
@@ -96,7 +100,7 @@ function submitGuess () {
     })
     let isItARealWord = guessArr.join('')
     if (!checkWord(isItARealWord)){
-        console.log('not a word try again')
+        notARealWord (isItARealWord)
         return
     }
     let secretArr = secretWord.split('')
@@ -150,7 +154,7 @@ function checkForWin (secretArr, guessArr) {
     let secretArrWord = secretArr.join('')
     let guessArrWord = guessArr.join('')
     if (secretArrWord === guessArrWord){
-        console.log("I win!")
+        userWins (secretArrWord)
     } else {
         increaseGuessNum()
         render()
@@ -163,7 +167,7 @@ function increaseGuessNum () {
 
 function checkForLoss () {
     if (guessNumber === 6) {
-        console.log ('you lose')
+        userLoses(secretWord)
     }
 }
 
@@ -177,4 +181,57 @@ function selectdifficulty (evt) {
     clearGuesses()
     resetBackground()
     render ()
+}
+
+function notARealWord (isItARealWord) {
+    modal.classList.remove('modal-off')
+    modal.classList.add('modal-on')
+    modal.innerHTML = 
+    `
+        <h2>Sorry ${isItARealWord.toUpperCase()} is not a word!</h2>
+        <p></p>
+        <button id="close-modal">Try Again!</button>
+    `
+}
+
+function closeModal (evt) {
+    if (evt.target.id === 'close-modal'){
+        modal.classList.remove('modal-on')
+        modal.classList.add('modal-off')
+    }
+}
+
+function userWins (secretArrWord) {
+    // let add = 'add'
+    modal.classList.remove('modal-off')
+    modal.classList.add('modal-on')
+    modal.innerHTML = 
+    `
+        <h2>You did it! The word was ${secretArrWord.toUpperCase()}</h2>
+        <p>Streak Updated!</p>
+        <button id="close-modal">Keep Playing!</button>
+    `
+    updateStreakNumber('add')
+}
+
+function updateStreakNumber (change) {
+    let currentStreak = parseInt(streakNumber.innerText)
+    if (change === 'add') {
+        streakNumber.innerText = `${currentStreak+1}`
+    } if (change === 'zero') {
+        streakNumber.innerText = '0'
+    }
+}
+
+function userLoses () {
+    modal.classList.remove('modal-off')
+    modal.classList.add('modal-on')
+    modal.innerHTML = 
+    `
+        <h2>Better Luck Next time.</h2>
+        <h3>The word was ${secretWord.toUpperCase()}</h3>
+        <p>Start a new streak!</p>
+        <button id="close-modal">Play Again!</button>
+    `
+    updateStreakNumber('zero')
 }

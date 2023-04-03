@@ -127,7 +127,6 @@ footer > button {
 }
 
 #modal {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -140,6 +139,18 @@ footer > button {
     line-height: 50%;
 }
 
+.modal-on {
+    display: flex;
+}
+
+.modal-off {
+    display: none;
+}
+
 #close-modal {
     margin-top: 10px;
+}
+
+#streak-div {
+    font-size: 1.5rem;
 }
