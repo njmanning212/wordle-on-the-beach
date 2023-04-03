@@ -12,6 +12,7 @@ const keyboard = document.getElementById('keyboard')
 const resetBtn = document.getElementById('reset-button')
 const deleteBtn = document.getElementById('delete-button')
 const sumbitBtn = document.getElementById('submit-button')
+const keyBoardLetters = document.querySelectorAll('.letter')
 
 
 /*--------- Event Listeners ---------*/
@@ -103,11 +104,17 @@ function compareArr (secretArr, guessArr) {
     guessArr.forEach(function (guessedLetter, idx){
         let secretIdx = secretArr.findIndex(letter => letter === guessedLetter)
         if (secretArr.includes(guessedLetter) && idx === secretIdx) {
-           currentGuessWord[idx].style.backgroundColor = 'gold' 
+            let color = 'gold'
+            currentGuessWord[idx].style.backgroundColor = color 
+            updateKeyboard (guessedLetter, color)
         } else if (secretArr.includes(guessedLetter)){
-            currentGuessWord[idx].style.backgroundColor = 'red'
+            let color = 'red'
+            currentGuessWord[idx].style.backgroundColor = color
+            updateKeyboard (guessedLetter, color)
         } else {
-            currentGuessWord[idx].style.backgroundColor = 'blue'
+            let color = 'blue'
+            currentGuessWord[idx].style.backgroundColor = color
+            updateKeyboard (guessedLetter, color)
         }
     })
 }
@@ -115,5 +122,15 @@ function compareArr (secretArr, guessArr) {
 function resetBackground () {
     guessLetters.forEach(function (letter){
         letter.style.background = ''
+    })
+}
+
+
+function updateKeyboard (guessedLetter, color) {
+    keyBoardLetters.forEach(function (letter){
+        let keyID
+        if (letter.id === guessedLetter){
+            letter.style.backgroundColor = color 
+        }
     })
 }
