@@ -8,10 +8,10 @@ let secretWord, guessNumber, guessBoardArr, currentGuessWord, letterTurn
 /*---- Cached Element References ----*/
 const guessWords = Array.from(document.querySelectorAll('.guess-word'))
 const guessLetters = document.querySelectorAll('.guess-letter')
-
 const keyboard = document.getElementById('keyboard')
 const resetBtn = document.getElementById('reset-button')
 const deleteBtn = document.getElementById('delete-button')
+const sumbitBtn = document.getElementById('submit-button')
 
 
 /*--------- Event Listeners ---------*/
@@ -19,6 +19,7 @@ const deleteBtn = document.getElementById('delete-button')
 resetBtn.addEventListener('click', init)
 keyboard.addEventListener('click', handleKeyboardClick)
 deleteBtn.addEventListener('click', deleteLetter)
+sumbitBtn.addEventListener('click', submitGuess)
 
 /*------------ Functions ------------*/
 
@@ -59,10 +60,8 @@ function clearGuesses () {
 function handleKeyboardClick(evt) {
     if (letterTurn < 5) {
         if (evt.target.classList.contains('letter')) {
-          console.log(evt.target.id)
           currentGuessWord[letterTurn].innerText = evt.target.id.toUpperCase()
           letterTurn++
-          console.log(letterTurn)
         }
     }
   }
@@ -77,10 +76,24 @@ function resetLetterTurn () {
 }
 
 function deleteLetter () {
-    console.log(`delete letter`)
     if (letterTurn > 0){
         currentGuessWord[letterTurn-1].innerText = ''
-        letterTurn = letterTurn - 1
-        console.log(letterTurn)
+        letterTurn--
     } 
+}
+
+function submitGuess () {
+    if (letterTurn !== 5) {
+        return
+    }
+    let guessArr = []
+    currentGuessWord.forEach(function (letterGuess){
+        let letter = letterGuess.innerText.toLowerCase()
+        guessArr.push(letter)
+    })
+    let secretArr = secretWord.split('')
+
+
+    console.log(guessArr)
+    console.log(secretArr)
 }
