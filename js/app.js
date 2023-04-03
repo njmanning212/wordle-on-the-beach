@@ -36,8 +36,6 @@ init ()
 function init () {
     secretWord = getWord(1)
     hintPool = secretWord.split('')
-    console.log(hintPool)
-    console.log(secretWord)
     guessNumber = 0
     letterTurn = 0
     win = false
@@ -192,7 +190,6 @@ function selectDifficulty (evt) {
     }
     const selectedDifficulty = parseInt(evt.target.value.replace('level ', ''))
     secretWord = getWord(selectedDifficulty)
-    console.log(secretWord)
     hintPool = secretWord.split('')
     guessNumber = 0
     letterTurn = 0
@@ -267,7 +264,6 @@ function spliceHintPool (guessedLetter) {
 }
 
 function giveHint () {
-    console.log(hintPool)
     if (hintsAvailable === 0){
         return
     }
@@ -275,9 +271,7 @@ function giveHint () {
         return
     }
     let hintGiven = hintPool[Math.floor(Math.random() * hintPool.length)]
-    console.log(hintGiven)
     keyBoardLetters.forEach(function (letter){
-        console.log(letter.id)
         if (letter.id === hintGiven) {
             letter.style.backgroundColor = 'red'
         }
