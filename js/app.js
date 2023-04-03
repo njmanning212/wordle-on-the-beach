@@ -92,8 +92,16 @@ function submitGuess () {
         guessArr.push(letter)
     })
     let secretArr = secretWord.split('')
+    compareArr(secretArr, guessArr)
+}
 
-
+function compareArr (secretArr, guessArr) {
     console.log(guessArr)
+    console.log(currentGuessWord)
     console.log(secretArr)
+    guessArr.forEach(function (guessedLetter, idx){
+        if (secretArr.includes(guessedLetter)){
+            currentGuessWord[idx].style.backgroundColor = 'red'
+        }
+    })
 }
