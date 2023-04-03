@@ -123,14 +123,19 @@ function resetBackground () {
     guessLetters.forEach(function (letter){
         letter.style.background = ''
     })
-}
+    keyBoardLetters.forEach(function (key){
+        key.style.background = ''
+    })
 
+}
 
 function updateKeyboard (guessedLetter, color) {
     keyBoardLetters.forEach(function (letter){
         let keyID
         if (letter.id === guessedLetter){
-            letter.style.backgroundColor = color 
+            if (letter.style.backgroundColor !== 'gold'){
+                letter.style.backgroundColor = color 
+            }
         }
     })
 }
