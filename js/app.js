@@ -3,7 +3,7 @@ import {getWord, checkWord} from "./data.js"
 
 /*------------ Variables ------------*/
 
-let secretWord, guessNumber, guessBoardArr, currentGuessWord, letterTurn, streak
+let secretWord, guessNumber, guessBoardArr, currentGuessWord, letterTurn, win
 
 /*---- Cached Element References ----*/
 const guessWords = Array.from(document.querySelectorAll('.guess-word'))
@@ -19,7 +19,7 @@ const streakNumber = document.getElementById('streak-number')
 
 /*--------- Event Listeners ---------*/
 
-resetBtn.addEventListener('click', init)
+resetBtn.addEventListener('click', resetGame)
 keyboard.addEventListener('click', handleKeyboardClick)
 deleteBtn.addEventListener('click', deleteLetter)
 sumbitBtn.addEventListener('click', submitGuess)
@@ -36,10 +36,18 @@ function init () {
     console.log(secretWord)
     guessNumber = 0
     letterTurn = 0
+    win = false
     setBoardArr()
     clearGuesses()
     resetBackground()
     render ()
+}
+
+function resetGame () {
+    if (win === false) {
+        updateStreakNumber('zero')
+    }
+    init()
 }
 
 function render () {
@@ -172,6 +180,9 @@ function checkForLoss () {
 }
 
 function selectdifficulty (evt) {
+    if (win === false) {
+        updateStreakNumber('zero')
+    }
     const selectedDifficulty = parseInt(evt.target.value.replace('level ', ''))
     secretWord = getWord(selectedDifficulty)
     console.log(secretWord)
@@ -202,7 +213,6 @@ function closeModal (evt) {
 }
 
 function userWins (secretArrWord) {
-    // let add = 'add'
     modal.classList.remove('modal-off')
     modal.classList.add('modal-on')
     modal.innerHTML = 
@@ -211,6 +221,7 @@ function userWins (secretArrWord) {
         <p>Streak Updated!</p>
         <button id="close-modal">Keep Playing!</button>
     `
+    win = true
     updateStreakNumber('add')
 }
 
