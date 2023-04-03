@@ -32,6 +32,7 @@ function init () {
     letterTurn = 0
     setBoardArr()
     clearGuesses()
+    resetBackground()
     render ()
 }
 
@@ -102,6 +103,14 @@ function compareArr (secretArr, guessArr) {
     guessArr.forEach(function (guessedLetter, idx){
         if (secretArr.includes(guessedLetter)){
             currentGuessWord[idx].style.backgroundColor = 'red'
+        } else {
+            currentGuessWord[idx].style.backgroundColor = 'blue'
         }
+    })
+}
+
+function resetBackground () {
+    guessLetters.forEach(function (letter){
+        letter.style.background = ''
     })
 }
