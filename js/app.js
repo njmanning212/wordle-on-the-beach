@@ -97,6 +97,7 @@ function submitGuess () {
     let secretArr = secretWord.split('')
     compareArr(secretArr, guessArr)
     checkForWin (secretArr, guessArr)
+    checkForLoss ()
 }
 
 function compareArr (secretArr, guessArr) {
@@ -145,5 +146,18 @@ function checkForWin (secretArr, guessArr) {
     let guessArrWord = guessArr.join('')
     if (secretArrWord === guessArrWord){
         console.log("I win!")
+    } else {
+        increaseGuessNum()
+        render()
+    }
+}
+
+function increaseGuessNum () {
+    guessNumber++
+}
+
+function checkForLoss () {
+    if (guessNumber === 6) {
+        console.log ('you lose')
     }
 }
