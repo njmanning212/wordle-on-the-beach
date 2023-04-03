@@ -92,20 +92,23 @@ function submitGuess () {
     currentGuessWord.forEach(function (letterGuess){
         let letter = letterGuess.innerText.toLowerCase()
         guessArr.push(letter)
+        return guessArr
     })
     let secretArr = secretWord.split('')
     compareArr(secretArr, guessArr)
+    checkForWin (secretArr, guessArr)
 }
 
 function compareArr (secretArr, guessArr) {
+    let compareSecretArr = [...secretArr]
     guessArr.forEach(function (guessedLetter, idx){
-        let secretIdx = secretArr.findIndex(letter => letter === guessedLetter)
-        if (secretArr.includes(guessedLetter) && idx === secretIdx) {
+        let secretIdx = compareSecretArr.findIndex(letter => letter === guessedLetter)
+        if (compareSecretArr.includes(guessedLetter) && idx === secretIdx) {
             let color = 'gold'
             currentGuessWord[idx].style.backgroundColor = color 
             updateKeyboard (guessedLetter, color)
-            secretArr.splice(idx, 1, 'null')
-        } else if (secretArr.includes(guessedLetter)){
+            compareSecretArr[secretIdx] = 'null'
+        } else if (compareSecretArr.includes(guessedLetter)){
             let color = 'red'
             currentGuessWord[idx].style.backgroundColor = color
             updateKeyboard (guessedLetter, color)
@@ -135,4 +138,12 @@ function updateKeyboard (guessedLetter, color) {
             }
         }
     })
+}
+
+function checkForWin (secretArr, guessArr) {
+    console.log(secretArr)
+    console.log(guessArr)
+    if (secretArr === guessArr){
+        console.log("I win!")
+    }
 }
