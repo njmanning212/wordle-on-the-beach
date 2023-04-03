@@ -141,9 +141,9 @@ function updateKeyboard (guessedLetter, color) {
 }
 
 function checkForWin (secretArr, guessArr) {
-    console.log(secretArr)
-    console.log(guessArr)
-    if (secretArr === guessArr){
+    let secretArrWord = secretArr.join('')
+    let guessArrWord = guessArr.join('')
+    if (secretArrWord === guessArrWord){
         console.log("I win!")
     }
 }
