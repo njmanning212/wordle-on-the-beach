@@ -27,9 +27,9 @@ sumbitBtn.addEventListener('click', submitGuess)
 init ()
 
 function init () {
-    secretWord = 'ariel'
-    //change above to function later to pull with difficult
-    guessNumber = 1
+    secretWord = 'wheel'
+    //change above to function later to pull with difficulty setting
+    guessNumber = 0
     letterTurn = 0
     setBoardArr()
     clearGuesses()
@@ -98,15 +98,13 @@ function submitGuess () {
 }
 
 function compareArr (secretArr, guessArr) {
-    console.log(guessArr)
-    console.log(currentGuessWord)
-    console.log(secretArr)
     guessArr.forEach(function (guessedLetter, idx){
         let secretIdx = secretArr.findIndex(letter => letter === guessedLetter)
         if (secretArr.includes(guessedLetter) && idx === secretIdx) {
             let color = 'gold'
             currentGuessWord[idx].style.backgroundColor = color 
             updateKeyboard (guessedLetter, color)
+            secretArr.splice(idx, 1, 'null')
         } else if (secretArr.includes(guessedLetter)){
             let color = 'red'
             currentGuessWord[idx].style.backgroundColor = color
@@ -131,7 +129,6 @@ function resetBackground () {
 
 function updateKeyboard (guessedLetter, color) {
     keyBoardLetters.forEach(function (letter){
-        let keyID
         if (letter.id === guessedLetter){
             if (letter.style.backgroundColor !== 'gold'){
                 letter.style.backgroundColor = color 
