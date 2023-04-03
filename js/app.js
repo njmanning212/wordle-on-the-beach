@@ -13,7 +13,7 @@ const resetBtn = document.getElementById('reset-button')
 const deleteBtn = document.getElementById('delete-button')
 const sumbitBtn = document.getElementById('submit-button')
 const keyBoardLetters = document.querySelectorAll('.letter')
-
+const difficultySelector = document.getElementById('difficulty-selector')
 
 /*--------- Event Listeners ---------*/
 
@@ -21,6 +21,7 @@ resetBtn.addEventListener('click', init)
 keyboard.addEventListener('click', handleKeyboardClick)
 deleteBtn.addEventListener('click', deleteLetter)
 sumbitBtn.addEventListener('click', submitGuess)
+difficultySelector.addEventListener('change', selectdifficulty)
 
 /*------------ Functions ------------*/
 
@@ -164,4 +165,16 @@ function checkForLoss () {
     if (guessNumber === 6) {
         console.log ('you lose')
     }
+}
+
+function selectdifficulty (evt) {
+    const selectedDifficulty = parseInt(evt.target.value.replace('level ', ''))
+    secretWord = getWord(selectedDifficulty)
+    console.log(secretWord)
+    guessNumber = 0
+    letterTurn = 0
+    setBoardArr()
+    clearGuesses()
+    resetBackground()
+    render ()
 }

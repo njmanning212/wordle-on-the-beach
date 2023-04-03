@@ -16,49 +16,67 @@
     <title>Wordle on the Beach</title>
 </head>
 <body>
-    <header>Wordle on the Beach</header>
-    <Main id="guess-board">
-        <div class="guess-word" id="guess-0">
-            <section class="guess-letter">G</section>
-            <section class="guess-letter">U</section>
-            <section class="guess-letter">E</section>
-            <section class="guess-letter">S</section>
-            <section class="guess-letter">S</section>
+    <header>
+        <h1>Wordle on the Beach</h1>
+    </header>
+    <Main>
+        <div id="difficulty-div">
+            <label>Select Difficulty:</label>
+            <select id="difficulty-selector">
+                <option value="level 1">Level 1</option>
+                <option value="level 2">Level 2</option>
+                <option value="level 3">Level 3</option>
+                <option value="level 4">Level 4</option>
+                <option value="level 5">Level 5</option>
+            </select>
         </div>
-        <div class="guess-word" id="guess-1">
-            <section class="guess-letter">G</section>
-            <section class="guess-letter">U</section>
-            <section class="guess-letter">E</section>
-            <section class="guess-letter">S</section>
-            <section class="guess-letter">S</section>
+        <div id="guess-board">
+            <div class="guess-word" id="guess-0">
+                <section class="guess-letter">G</section>
+                <section class="guess-letter">U</section>
+                <section class="guess-letter">E</section>
+                <section class="guess-letter">S</section>
+                <section class="guess-letter">S</section>
+            </div>
+            <div class="guess-word" id="guess-1">
+                <section class="guess-letter">G</section>
+                <section class="guess-letter">U</section>
+                <section class="guess-letter">E</section>
+                <section class="guess-letter">S</section>
+                <section class="guess-letter">S</section>
+            </div>
+            <div class="guess-word" id="guess-2">
+                <section class="guess-letter">G</section>
+                <section class="guess-letter">U</section>
+                <section class="guess-letter">E</section>
+                <section class="guess-letter">S</section>
+                <section class="guess-letter">S</section>
+            </div>
+            <div class="guess-word" id="guess-3">
+                <section class="guess-letter">G</section>
+                <section class="guess-letter">U</section>
+                <section class="guess-letter">E</section>
+                <section class="guess-letter">S</section>
+                <section class="guess-letter">S</section>
+            </div>
+            <div class="guess-word" id="guess-4">
+                <section class="guess-letter">G</section>
+                <section class="guess-letter">U</section>
+                <section class="guess-letter">E</section>
+                <section class="guess-letter">S</section>
+                <section class="guess-letter">S</section>
+            </div>
+            <div class="guess-word" id="guess-5">
+                <section class="guess-letter">G</section>
+                <section class="guess-letter">U</section>
+                <section class="guess-letter">E</section>
+                <section class="guess-letter">S</section>
+                <section class="guess-letter">S</section>
+            </div>
         </div>
-        <div class="guess-word" id="guess-2">
-            <section class="guess-letter">G</section>
-            <section class="guess-letter">U</section>
-            <section class="guess-letter">E</section>
-            <section class="guess-letter">S</section>
-            <section class="guess-letter">S</section>
-        </div>
-        <div class="guess-word" id="guess-3">
-            <section class="guess-letter">G</section>
-            <section class="guess-letter">U</section>
-            <section class="guess-letter">E</section>
-            <section class="guess-letter">S</section>
-            <section class="guess-letter">S</section>
-        </div>
-        <div class="guess-word" id="guess-4">
-            <section class="guess-letter">G</section>
-            <section class="guess-letter">U</section>
-            <section class="guess-letter">E</section>
-            <section class="guess-letter">S</section>
-            <section class="guess-letter">S</section>
-        </div>
-        <div class="guess-word" id="guess-5">
-            <section class="guess-letter">G</section>
-            <section class="guess-letter">U</section>
-            <section class="guess-letter">E</section>
-            <section class="guess-letter">S</section>
-            <section class="guess-letter">S</section>
+        <div id="streak-div">
+            <h2>Your Streak</h2>
+            <h2>5</h2>
         </div>
     </Main>
     <div id="keyboard">
