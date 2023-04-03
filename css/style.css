@@ -126,4 +126,20 @@ footer > button {
     font-size: 35px;
 }
 
+#modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    margin-top: 10%;
+    background-color: gray;
+    z-index: 100;
+    width: 33%;
+    height: 33%;
+    line-height: 50%;
+}
 
+#close-modal {
+    margin-top: 10px;
+}
