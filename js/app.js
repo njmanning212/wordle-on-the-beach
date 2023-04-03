@@ -101,7 +101,10 @@ function compareArr (secretArr, guessArr) {
     console.log(currentGuessWord)
     console.log(secretArr)
     guessArr.forEach(function (guessedLetter, idx){
-        if (secretArr.includes(guessedLetter)){
+        let secretIdx = secretArr.findIndex(letter => letter === guessedLetter)
+        if (secretArr.includes(guessedLetter) && idx === secretIdx) {
+           currentGuessWord[idx].style.backgroundColor = 'gold' 
+        } else if (secretArr.includes(guessedLetter)){
             currentGuessWord[idx].style.backgroundColor = 'red'
         } else {
             currentGuessWord[idx].style.backgroundColor = 'blue'
