@@ -1,5 +1,5 @@
 /*------------ Constants ------------*/
-
+import {getWord, checkWord} from "./data.js"
 
 /*------------ Variables ------------*/
 
@@ -27,8 +27,8 @@ sumbitBtn.addEventListener('click', submitGuess)
 init ()
 
 function init () {
-    secretWord = 'wheel'
-    //change above to function later to pull with difficulty setting
+    secretWord = getWord(1)
+    console.log(secretWord)
     guessNumber = 0
     letterTurn = 0
     setBoardArr()
@@ -38,7 +38,6 @@ function init () {
 }
 
 function render () {
-    console.log(guessBoardArr)
     createCurrentGuessWord()
     resetLetterTurn()
 }
@@ -94,6 +93,11 @@ function submitGuess () {
         guessArr.push(letter)
         return guessArr
     })
+    let isItARealWord = guessArr.join('')
+    if (!checkWord(isItARealWord)){
+        console.log('not a word try again')
+        return
+    }
     let secretArr = secretWord.split('')
     compareArr(secretArr, guessArr)
     checkForWin (secretArr, guessArr)
