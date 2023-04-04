@@ -145,6 +145,7 @@ function submitGuess () {
     compareArr(secretArr, guessArr)
     checkForWin (secretArr, guessArr)
     checkForLoss ()
+    updateHintButton ()
 }
 
 function compareArr (secretArr, guessArr) {
@@ -306,4 +307,12 @@ function giveHint () {
         }
     })
     hintsAvailable--
+    updateHintButton ()
+}
+
+function updateHintButton () {
+    if (hintsAvailable === 0) {
+        hintBtn.classList.remove('hints-available')
+        hintBtn.classList.add('no-hints-available')
+    }
 }
