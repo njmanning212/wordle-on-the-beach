@@ -58,6 +58,10 @@ header {
     margin-right: 5px;
 }
 
+.level {
+    font-size: large;
+}
+
 #streak-div {
     display: flex;
     justify-content: center;
@@ -174,7 +178,7 @@ footer > button {
 }
 
 #delete-button {
-    font-size: 2.75em;
+    font-size: 2.5em;
 }
 
 #modal {
