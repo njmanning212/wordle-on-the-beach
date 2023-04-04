@@ -209,7 +209,7 @@ footer > button {
 }
 
 #modal > p {
-    font-size: 2em;
+    font-size: 4em;
 }
 
 #modal > h1 {
@@ -236,4 +236,9 @@ footer > button {
     box-shadow: 2px 2px 4px rgba(245,121,57, 0.3);
     width: 50%;
     font-size: 1.5em;
+}
+
+#difficulty-selector {
+    border-radius: 5%;
+    background-color: black;
 }
