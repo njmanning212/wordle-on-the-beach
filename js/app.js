@@ -233,8 +233,9 @@ function notARealWord (isItARealWord) {
     modal.classList.add('modal-on')
     modal.innerHTML = 
     `
-        <h2>Sorry ${isItARealWord.toUpperCase()} is not a word!</h2>
-        <p></p>
+        <p>Sorry</p>
+        <h1>${isItARealWord.toUpperCase()}</h1>
+        <p>is not a real word</p>
         <button id="close-modal">Try Again!</button>
     `
 }
@@ -251,8 +252,9 @@ function userWins (secretArrWord) {
     modal.classList.add('modal-on')
     modal.innerHTML = 
     `
-        <h2>You did it! The word was ${secretArrWord.toUpperCase()}</h2>
-        <p>Streak Updated!</p>
+        <p>The word was</p>
+        <h1>${secretArrWord.toUpperCase()}</h1>
+        <p>You did it!</p>
         <button id="close-modal">Keep Playing!</button>
     `
     win = true
@@ -273,10 +275,10 @@ function userLoses () {
     modal.classList.add('modal-on')
     modal.innerHTML = 
     `
-        <h2>Better Luck Next time.</h2>
-        <h3>The word was ${secretWord.toUpperCase()}</h3>
-        <p>Start a new streak!</p>
-        <button id="close-modal">Play Again!</button>
+        <p>The word was</p>
+        <h3>${secretWord.toUpperCase()}</h3>
+        <p>Better Luck Next Time!</p>
+        <button id="close-modal">Try Again!</button>
     `
     updateStreakNumber('zero')
 }
