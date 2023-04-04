@@ -239,6 +239,7 @@ footer > button {
 }
 
 #difficulty-selector {
-    border-radius: 5%;
-    background-color: black;
+    border-radius: 5px;
+    background-color: rgba(59, 52, 56, 0.5);
+    color: white;
 }
