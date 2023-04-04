@@ -133,28 +133,48 @@ main {
     margin: 2px;
     height: 75%;
     width: 8%;
+    background-color: white;
+    border-radius: 20%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 1.25em;
 }
 
 footer {
-    margin-top: 10px;
     display: flex;
-    width: 50%;
+    width: 90%;
     justify-content: space-around;
     align-items: center;
-    gap: 5px;
+    gap: 5%;
+    height: 5%;
 }
 
 footer > button {
-    margin-top: 10px;
     display: flex;
-    width: 25%;
+    width: 40%;
     height: 100%;
     justify-content: center;
     align-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: white;
+}
+
+#hint-button, #reset-button {
+    background-color: rgb(245,121,57);
+    box-shadow: 2px 2px 4px rgba(245,121,57, 0.3);
+}
+
+#submit-button {
+    background-color: rgb(133,192,249);
+    box-shadow: 2px 2px 4px rgba(133,192,249, 0.3);
 }
 
 #delete-button {
-    font-size: 35px;
+    font-size: 2.75em;
 }
 
 #modal {
@@ -162,12 +182,14 @@ footer > button {
     justify-content: center;
     align-items: center;
     position: fixed;
-    margin-top: 10%;
+    margin-top: 25%;
     background-color: gray;
     z-index: 100;
-    width: 33%;
-    height: 33%;
+    width: 90%;
+    height: 50%;
     line-height: 50%;
+    background-color: rgba(4, 4, 4,);
+    border-radius: 10%;
 }
 
 .modal-on {
@@ -180,4 +202,14 @@ footer > button {
 
 #close-modal {
     margin-top: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 15%;
+    color: white;
+    background-color: rgb(133,192,249);
+    box-shadow: 2px 2px 4px rgba(245,121,57, 0.3);
+    width: 50%;
+    font-size: 1.5em;
 }

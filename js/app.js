@@ -152,18 +152,18 @@ function compareArr (secretArr, guessArr) {
     guessArr.forEach(function (guessedLetter, idx){
         let secretIdx = compareSecretArr.findIndex(letter => letter === guessedLetter)
         if (compareSecretArr.includes(guessedLetter) && idx === secretIdx) {
-            let color = 'gold'
+            let color = 'rgb(133,192,249)'
             currentGuessWord[idx].style.backgroundColor = color 
             updateKeyboard (guessedLetter, color)
             spliceHintPool (guessedLetter)
             compareSecretArr[secretIdx] = 'null'
         } else if (compareSecretArr.includes(guessedLetter)){
-            let color = 'red'
+            let color = 'rgb(245,121,57)'
             currentGuessWord[idx].style.backgroundColor = color
             updateKeyboard (guessedLetter, color)
             spliceHintPool(guessedLetter)
         } else {
-            let color = 'blue'
+            let color = 'rgb(58,58,59)'
             currentGuessWord[idx].style.backgroundColor = color
             updateKeyboard (guessedLetter, color)
         }
@@ -183,7 +183,7 @@ function resetBackground () {
 function updateKeyboard (guessedLetter, color) {
     keyBoardLetters.forEach(function (letter){
         if (letter.id === guessedLetter){
-            if (letter.style.backgroundColor !== 'gold'){
+            if (letter.style.backgroundColor !== 'rgb(133,192,249)'){
                 letter.style.backgroundColor = color 
             }
         }
@@ -300,7 +300,7 @@ function giveHint () {
     let hintGiven = hintPool[Math.floor(Math.random() * hintPool.length)]
     keyBoardLetters.forEach(function (letter){
         if (letter.id === hintGiven) {
-            letter.style.backgroundColor = 'red'
+            letter.style.backgroundColor = 'rgb(245,121,57)'
         }
     })
     hintsAvailable--
