@@ -24,9 +24,9 @@
     <header>
         <h1>Wordle on the Beach</h1>
     </header>
-    <Main>
+    <div class="mobile-info"> 
         <div id="difficulty-div">
-            <label>Select Difficulty:</label>
+            <label>Difficulty</label>
             <select id="difficulty-selector">
                 <option value="level 1">Level 1</option>
                 <option value="level 2">Level 2</option>
@@ -35,6 +35,12 @@
                 <option value="level 5">Level 5</option>
             </select>
         </div>
+        <div id="streak-div">
+            <p>Streak🔥</p>
+            <h3 id="streak-number">0</h3>
+        </div>
+    </div>
+    <Main>
         <div id="guess-board">
             <div class="guess-word" id="guess-0">
                 <section class="guess-letter"></section>
@@ -78,10 +84,6 @@
                 <section class="guess-letter"></section>
                 <section class="guess-letter"></section>
             </div>
-        </div>
-        <div id="streak-div">
-            <h2>Your Streak</h2>
-            <h1 id="streak-number">0</h1>
         </div>
     </Main>
     <div id="keyboard">
