@@ -279,7 +279,7 @@ function userLoses () {
     modal.innerHTML = 
     `
         <p>The word was</p>
-        <h3>${secretWord.toUpperCase()}</h3>
+        <h1>${secretWord.toUpperCase()}</h1>
         <p>Better Luck Next Time!</p>
         <button id="close-modal">Try Again!</button>
     `

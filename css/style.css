@@ -209,11 +209,11 @@ footer > button {
 }
 
 #modal > p {
-    font-size: 4em;
+    font-size: 150%;
 }
 
 #modal > h1 {
-    font-size: 3em;
+    font-size: 300%;
 }
 
 .modal-on {
