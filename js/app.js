@@ -27,7 +27,9 @@ sumbitBtn.addEventListener('click', submitGuess)
 difficultySelector.addEventListener('change', selectDifficulty)
 modal.addEventListener('click', closeModal)
 hintBtn.addEventListener('click', giveHint)
-
+window.addEventListener('keydown', letterKeyPressed)
+window.addEventListener('keydown', deleteKeyPressed)
+window.addEventListener('keydown', enterKeyPressed)
 
 /*------------ Functions ------------*/
 
@@ -83,6 +85,16 @@ function handleKeyboardClick(evt) {
     }
   }
 
+function letterKeyPressed (evt) {
+    if (evt.keyCode > 64 && evt.keyCode < 91){
+    let key = evt.key
+        if (letterTurn < 5) {
+          currentGuessWord[letterTurn].innerText = key.toUpperCase()
+          letterTurn++
+        }
+    }
+}
+
 function createCurrentGuessWord () {
     currentGuessWord = guessBoardArr[guessNumber]
     return currentGuessWord
@@ -97,6 +109,21 @@ function deleteLetter () {
         currentGuessWord[letterTurn-1].innerText = ''
         letterTurn--
     } 
+}
+
+function deleteKeyPressed (evt) {
+    if (evt.keyCode === 8){
+        if (letterTurn > 0){
+            currentGuessWord[letterTurn-1].innerText = ''
+            letterTurn--
+        } 
+    }
+}
+
+function enterKeyPressed (evt) {
+    if (evt.keyCode === 13){
+        submitGuess()
+    }
 }
 
 function submitGuess () {
