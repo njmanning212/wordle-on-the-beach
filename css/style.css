@@ -148,7 +148,7 @@ footer {
     width: 90%;
     justify-content: space-around;
     align-items: center;
-    gap: 5%;
+    gap: 3%;
     height: 10%;
 }
 
@@ -183,8 +183,11 @@ footer > button {
 }
 
 #submit-button {
+    width: 60%;
+    height: 75%;
     background-color: rgb(133,192,249);
     box-shadow: 2px 2px 4px rgba(133,192,249, 0.3);
+    font-size: 1.75em;
 }
 
 #delete-button {

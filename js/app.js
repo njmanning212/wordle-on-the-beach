@@ -42,6 +42,7 @@ function init () {
     letterTurn = 0
     win = false
     hintsAvailable = 1
+    updateHintButton ()
     setBoardArr()
     clearGuesses()
     resetBackground()
@@ -222,7 +223,8 @@ function selectDifficulty (evt) {
     guessNumber = 0
     letterTurn = 0
     win = false
-    hintsAvailable = 0
+    hintsAvailable = 1
+    updateHintButton ()
     setBoardArr()
     clearGuesses()
     resetBackground()
@@ -314,5 +316,8 @@ function updateHintButton () {
     if (hintsAvailable === 0) {
         hintBtn.classList.remove('hints-available')
         hintBtn.classList.add('no-hints-available')
+    } if (hintsAvailable === 1) {
+        hintBtn.classList.remove('no-hints-available')
+        hintBtn.classList.add('hints-available')
     }
 }
