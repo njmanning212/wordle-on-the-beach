@@ -130,7 +130,7 @@ function enterKeyPressed (evt) {
 
 function submitGuess () {
     if (win === true) {
-        init()
+        return
     }
     if (letterTurn !== 5) {
         return
