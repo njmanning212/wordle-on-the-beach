@@ -1,2 +1,2 @@
 # Wordle On The Beach!
-![alt text] (./Assets/Images/Wordle Read ME.png "Wordle on the Beach Gameplay")
+![WordleGamePlay](./Assets/Images/wordle-readme-photo.png "Wordle Game Play Photo")
