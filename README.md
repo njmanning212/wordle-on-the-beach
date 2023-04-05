@@ -5,10 +5,31 @@ Want to improve your NY Times wordle ability AND skip the adds of those other ap
 
 We've added a couple of features to help you develop your skills! 
 * If it's not a 5 letter word in english we'll let you know!
+
 * Our streak system will help you keep track of how many in a row you've gotten right! No cheating and changing difficulty or resetting early!
+
 * Our hint feature will give you a letter in the secret word if you haven't found it yet. Did it disappear with only 4 letters found? Watch out for words with double letters!
+
 * Getting better? Increase the difficulty!
 
-[##Click Here to Play!](https://wordle-on-the-beach.netlify.app/)
 
-<a href="https://wordle-on-the-beach.netlify.app/" style="font-size: 24px;">Click Here to Play!</a>
+# **[Click Here To Play](https://wordle-on-the-beach.netlify.app/)**
+
+
+# **Technologies Used:**
+* CSS
+* Javascript
+* HTML
+* Git
+
+
+# **Attributions:**
+
+
+# **Ice Box:**
+- [ ] Add audio to letter inputs to guesses, submitted words, win/loss scenarios
+- [ ] Add animation to letters revelaed as included in secret word and in corrct position
+- [ ] Add toggle for hints to increase challenge when turned off
+- [ ] Add toggle for timer to icnrease challenge/speed
+- [ ] Adapt streak to score to incorproate how many guesses it took to find secret word
+- [ ] Add togle for relaxing waves white noise background to immerse user in beach environment
