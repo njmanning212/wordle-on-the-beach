@@ -8,3 +8,5 @@ We've added a couple of features to help you develop your skills!
 * Our streak system will help you keep track of how many in a row you've gotten right! No cheating and changing difficulty or resetting early!
 * Our hint feature will give you a letter in the secret word if you haven't found it yet. Did it disappear with only 4 letters found? Watch out for words with double letters!
 * Getting better? Increase the difficulty!
+
+[##Click Here to Play!](https://wordle-on-the-beach.netlify.app/)
