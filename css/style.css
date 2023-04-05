@@ -185,9 +185,17 @@ footer > button {
 #submit-button {
     width: 60%;
     height: 75%;
-    background-color: rgb(133,192,249);
     box-shadow: 2px 2px 4px rgba(133,192,249, 0.3);
     font-size: 1.75em;
+}
+
+.submit-ready {
+    background-color: rgb(133,192,249);
+}
+
+.submit-not-ready {
+    background-color: rgba(59, 52, 56, 0.5);
+    color: rgba(59, 52, 56, 0.7);
 }
 
 #delete-button {

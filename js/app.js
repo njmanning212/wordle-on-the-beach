@@ -11,7 +11,7 @@ const guessLetters = document.querySelectorAll('.guess-letter')
 const keyboard = document.getElementById('keyboard')
 const resetBtn = document.getElementById('reset-button')
 const deleteBtn = document.getElementById('delete-button')
-const sumbitBtn = document.getElementById('submit-button')
+const submitBtn = document.getElementById('submit-button')
 const keyBoardLetters = document.querySelectorAll('.letter')
 const difficultySelector = document.getElementById('difficulty-selector')
 const modal = document.getElementById('modal')
@@ -23,7 +23,7 @@ const hintBtn = document.getElementById('hint-button')
 resetBtn.addEventListener('click', resetGame)
 keyboard.addEventListener('click', handleKeyboardClick)
 deleteBtn.addEventListener('click', deleteLetter)
-sumbitBtn.addEventListener('click', submitGuess)
+submitBtn.addEventListener('click', submitGuess)
 difficultySelector.addEventListener('change', selectDifficulty)
 modal.addEventListener('click', closeModal)
 hintBtn.addEventListener('click', giveHint)
@@ -43,10 +43,12 @@ function init () {
     win = false
     hintsAvailable = 1
     updateHintButton ()
+    submitReady()
     setBoardArr()
     clearGuesses()
     resetBackground()
     render ()
+    console.log (secretWord)
 }
 
 function resetGame () {
@@ -225,6 +227,7 @@ function selectDifficulty (evt) {
     win = false
     hintsAvailable = 1
     updateHintButton ()
+    submitReady()
     setBoardArr()
     clearGuesses()
     resetBackground()
@@ -262,6 +265,8 @@ function userWins (secretArrWord) {
     `
     win = true
     updateStreakNumber('add')
+    darkenSubmit ()
+    darkenHint ()
 }
 
 function updateStreakNumber (change) {
@@ -284,6 +289,8 @@ function userLoses () {
         <button id="close-modal">Try Again!</button>
     `
     updateStreakNumber('zero')
+    darkenSubmit ()
+    darkenHint ()
 }
 
 function spliceHintPool (guessedLetter) {
@@ -296,28 +303,45 @@ function spliceHintPool (guessedLetter) {
 }
 
 function giveHint () {
-    if (hintsAvailable === 0){
-        return
-    }
-    if (hintPool.length === 0) {
-        return
-    }
-    let hintGiven = hintPool[Math.floor(Math.random() * hintPool.length)]
-    keyBoardLetters.forEach(function (letter){
-        if (letter.id === hintGiven) {
-            letter.style.backgroundColor = 'rgb(245,121,57)'
+    if (guessNumber < 6){
+        if (hintsAvailable === 0){
+            return
         }
-    })
-    hintsAvailable--
-    updateHintButton ()
+        if (hintPool.length === 0) {
+            return
+        }
+        let hintGiven = hintPool[Math.floor(Math.random() * hintPool.length)]
+        keyBoardLetters.forEach(function (letter){
+            if (letter.id === hintGiven) {
+                letter.style.backgroundColor = 'rgb(245,121,57)'
+            }
+        })
+        hintsAvailable--
+        updateHintButton ()
+    }
 }
 
 function updateHintButton () {
-    if (hintPool.length === 0 || hintsAvailable === 0 ) {
+    if (hintPool.length === 0 || hintsAvailable === 0 || guessNumber === 6) {
         hintBtn.classList.remove('hints-available')
         hintBtn.classList.add('no-hints-available')
-    } if (hintsAvailable === 1 && hintPool.length > 0) {
+    } if (hintsAvailable === 1 && hintPool.length > 0 && guessNumber < 6) {
         hintBtn.classList.remove('no-hints-available')
         hintBtn.classList.add('hints-available')
     }
+}
+
+function darkenSubmit () {
+    submitBtn.classList.remove('submit-ready')
+    submitBtn.classList.add('submit-not-ready')
+}
+
+function submitReady () {
+    submitBtn.classList.remove('submit-not-ready')
+    submitBtn.classList.add('submit-ready')
+}
+
+function darkenHint () {
+    hintBtn.classList.remove('hints-available')
+    hintBtn.classList.add('no-hints-available')
 }
