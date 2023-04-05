@@ -313,10 +313,10 @@ function giveHint () {
 }
 
 function updateHintButton () {
-    if (hintsAvailable === 0) {
+    if (hintPool.length === 0 || hintsAvailable === 0 ) {
         hintBtn.classList.remove('hints-available')
         hintBtn.classList.add('no-hints-available')
-    } if (hintsAvailable === 1) {
+    } if (hintsAvailable === 1 && hintPool.length > 0) {
         hintBtn.classList.remove('no-hints-available')
         hintBtn.classList.add('hints-available')
     }
