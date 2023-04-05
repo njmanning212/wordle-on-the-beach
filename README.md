@@ -10,3 +10,5 @@ We've added a couple of features to help you develop your skills!
 * Getting better? Increase the difficulty!
 
 [<font size="5">Click Here to Play!</font>](https://wordle-on-the-beach.netlify.app/)
+
+<a href="https://wordle-on-the-beach.netlify.app/" style="font-size: 24px;">Click Here to Play!</a>
