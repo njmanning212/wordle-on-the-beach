@@ -8,11 +8,6 @@ html {
     box-sizing: inherit;
 }
 
-/* borders for reference Delete when done!!!!*/
-/* header, main, div, section, footer{
-    border: 1px solid white;
-} */
-
 body{
     background-color: black;
     background-size: cover;
@@ -34,6 +29,10 @@ header, main, .keyboard {
 
 header {
     margin-bottom: -20px; 
+}
+
+header > h1 {
+    font-size: 1.5rem;
 }
 
 .mobile-info {
@@ -244,6 +243,12 @@ footer > button {
     border-radius: 5px;
     background-color: rgba(59, 52, 56, 0.5);
     color: white;
+}
+
+@media screen and (min-width: 393px) {
+   header > h1 {
+    font-size: 2rem;
+   }
 }
 
 @media screen and (min-width: 768px) {

@@ -48,7 +48,6 @@ function init () {
     clearGuesses()
     resetBackground()
     render ()
-    console.log (secretWord)
 }
 
 function resetGame () {
@@ -130,6 +129,9 @@ function enterKeyPressed (evt) {
 }
 
 function submitGuess () {
+    if (win === true) {
+        init()
+    }
     if (letterTurn !== 5) {
         return
     }
