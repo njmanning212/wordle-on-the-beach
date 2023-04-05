@@ -81,7 +81,7 @@ main {
     justify-content: space-around;
     align-items: center;
     background-color: rgba(59, 52, 56, 0.5);
-    border-radius: 2%;
+    border-radius: 10px;
 }
 
 #guess-board {
@@ -107,7 +107,7 @@ main {
     align-items: center;
     height: 90%;
     width: 18%;
-    border-radius: 10%;
+    border-radius: 10px;
     background-color: rgba(4, 4, 4, 0.75);
     color: white;
     font-size: 2rem;
@@ -138,7 +138,7 @@ main {
     height: 75%;
     width: 8.25%;
     background-color: white;
-    border-radius: 20%;
+    border-radius: 10px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-size: 1.25em;
 }
@@ -158,10 +158,7 @@ footer > button {
     height: 60%;
     justify-content: center;
     align-items: center;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    border-radius: 10px;
     font-size: 1.5em;
     font-weight: 500;
     color: white;
@@ -206,14 +203,14 @@ footer > button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    margin-top: 25%;
+    position: absolute;
+    top: 25%;
     z-index: 100;
     width: 90%;
     height: 50%;
     line-height: 50%;
     background-color: rgba(4, 4, 4, .8);
-    border-radius: 10%;
+    border-radius: 10px;
 }
 
 #modal > p {
@@ -234,10 +231,7 @@ footer > button {
 
 #close-modal {
     margin-top: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    border-radius: 10px;
     height: 15%;
     color: white;
     background-color: rgb(133,192,249);
@@ -253,6 +247,9 @@ footer > button {
 }
 
 @media screen and (min-width: 768px) {
+    #modal {
+        width: 70%;
+    }
     .mobile-info {
         width: 50%;
         font-size: large;
@@ -269,6 +266,9 @@ footer > button {
 }
 
 @media screen and (min-width: 992px) {
+    #modal {
+        width: 60%;
+    }
     .mobile-info {
         width: 50%;
         font-size: large;
@@ -285,17 +285,20 @@ footer > button {
 }
 
 @media screen and (min-width: 1200px) {
-    .mobile-info {
+    #modal {
         width: 50%;
+    }
+    .mobile-info {
+        width: 30%;
         font-size: large;
     }
     main {
-        width: 40%;
+        width: 35%;
     }
     #keyboard {
-        width: 50%;
+        width: 45%;
     }
     footer {
-        width: 30%;
+        width: 25%;
     }
 }
