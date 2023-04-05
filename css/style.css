@@ -85,12 +85,12 @@ main {
 }
 
 #guess-board {
-        height: 100%;
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .guess-word {
@@ -250,4 +250,52 @@ footer > button {
     border-radius: 5px;
     background-color: rgba(59, 52, 56, 0.5);
     color: white;
+}
+
+@media screen and (min-width: 768px) {
+    .mobile-info {
+        width: 50%;
+        font-size: large;
+    }
+    main {
+        width: 50%;
+    }
+    #keyboard {
+        width: 60%;
+    }
+    footer {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .mobile-info {
+        width: 50%;
+        font-size: large;
+    }
+    main {
+        width: 40%;
+    }
+    #keyboard {
+        width: 50%;
+    }
+    footer {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .mobile-info {
+        width: 50%;
+        font-size: large;
+    }
+    main {
+        width: 40%;
+    }
+    #keyboard {
+        width: 50%;
+    }
+    footer {
+        width: 30%;
+    }
 }
