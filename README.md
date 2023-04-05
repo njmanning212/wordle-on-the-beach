@@ -9,6 +9,6 @@ We've added a couple of features to help you develop your skills!
 * Our hint feature will give you a letter in the secret word if you haven't found it yet. Did it disappear with only 4 letters found? Watch out for words with double letters!
 * Getting better? Increase the difficulty!
 
-[Click Here to Play!](https://wordle-on-the-beach.netlify.app/){style="font-size: 24px;"}
+[##Click Here to Play!](https://wordle-on-the-beach.netlify.app/)
 
 <a href="https://wordle-on-the-beach.netlify.app/" style="font-size: 24px;">Click Here to Play!</a>
