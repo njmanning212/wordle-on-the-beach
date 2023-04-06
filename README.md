@@ -1,7 +1,7 @@
 # Wordle On The Beach!
 ![WordleGamePlay](./Assets/Images/wordle-readme-photo.png "Wordle Game Play Photo")
 
-Want to improve your NY Times Wordle ability and skip the ads of those other apps? **Wordle On The Beach** is your training grounds. Nearly identical to both the paper-and-pen game Jotto from 1955 and the television game Lingo players are given six chances to guess a five-letter secret word using only other five-letter English words. The goal is to take as few guesses as possible. Feedback is given to the player with each guessed word if any of the letters match those in the guessed word (background changing to orange) and if the letter is in the same place in the secret word (background changing to blue).
+Want to improve your NY Times Wordle ability and skip the ads of those other apps? **Wordle On The Beach** is your training grounds. Nearly identical to both the paper-and-pen game Jotto from 1955 and the television game Lingo, players are given six chances to guess a five-letter secret word using only other five-letter English words. The goal is to take as few guesses as possible. Feedback is given to the player with each guessed word if any of the letters match those in the guessed word (background changing to orange) and if the letter is in the same place in the secret word (background changing to blue).
 
 # **[Click Here To Play](https://wordle-on-the-beach.netlify.app/)**
 
