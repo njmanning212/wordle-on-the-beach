@@ -9,7 +9,7 @@ Want to improve your NY Times Wordle ability and skip the ads of those other app
 We've added a couple of features to help you develop your skills! 
 * If your guess word isn't a five-letter word in English we'll let you know!
 
-* Our streak system will help you keep track of how many secret words in a row you've revealed No cheating and changing difficulty or resetting early!
+* Our streak system will help you keep track of how many secret words in a row you've revealed. No cheating and changing difficulty or resetting early!
 
 * Our hint feature will give you a letter in the secret word if you haven't found it yet. Did it disappear with only four letters found? Watch out for words with double letters!
 
