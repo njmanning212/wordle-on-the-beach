@@ -23,9 +23,6 @@ We've added a couple of features to help you develop your skills!
 * Git
 
 
-# **Attributions:**
-
-
 # **Ice Box:**
 - [ ] Add audio to letter inputs to guesses, submitted words, win/loss scenarios
 - [ ] Add animation to letters revealed as included in secret word and correct position
