@@ -315,7 +315,7 @@ function giveHint () {
         let hintGiven = hintPool[Math.floor(Math.random() * hintPool.length)]
         keyBoardLetters.forEach(function (letter){
             if (letter.id === hintGiven) {
-                letter.style.backgroundColor = 'rgb(245,121,57)'
+                letter.style.backgroundColor = 'rgba(100, 2, 156, 0.8)'
             }
         })
         hintsAvailable--

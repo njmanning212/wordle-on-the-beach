@@ -169,7 +169,7 @@ footer > button {
 }
 
 .hints-available {
-    background-color: rgb(245,121,57);
+    background-color: rgba(100, 2, 156);
     box-shadow: 2px 2px 4px rgba(245,121,57, 0.3);
 }
 
