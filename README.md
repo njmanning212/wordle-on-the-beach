@@ -30,5 +30,5 @@ We've added a couple of features to help you develop your skills!
 - [ ] Add toggle for a timer to increase challenge/speed
 - [ ] Adapt the streak system to a scoring system to incorporate how many guesses it took to find the secret word
 - [ ] Add toggle for relaxing waves white noise background to help immerse the user in a beach environment
-- [ ] Animate or change the color of the hint revealed letter on the keyboard to more clearly communicate to the player
+- [x] Animate or change the color of the hint revealed letter on the keyboard to more clearly communicate to the player
 - [ ] Cache streak/score to allow continued play over multiple visits and store the highest streak/score attained
