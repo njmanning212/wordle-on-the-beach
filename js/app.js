@@ -3,7 +3,7 @@ import {getWord, checkWord} from "./data.js"
 
 /*------------ Variables ------------*/
 
-let secretWord, guessNumber, guessBoardArr, currentGuessWord, letterTurn, win, hintsAvailable, hintPool
+let secretWord, guessNumber, guessBoardArr, currentGuessWord, letterTurn, win, hintsAvailable, hintPool, difficulty
 
 /*---- Cached Element References ----*/
 const guessWords = Array.from(document.querySelectorAll('.guess-word'))
@@ -33,10 +33,10 @@ window.addEventListener('keydown', enterKeyPressed)
 
 /*------------ Functions ------------*/
 
-init ()
+init (1)
 
-function init () {
-    secretWord = getWord(1)
+function init (level) {
+    secretWord = getWord(level)
     hintPool = secretWord.split('')
     guessNumber = 0
     letterTurn = 0
@@ -54,7 +54,11 @@ function resetGame () {
     if (win === false) {
         updateStreakNumber('zero')
     }
-    init()
+    if (difficulty >= 1) {
+        init(difficulty)
+    } else {
+        init(1)
+    }
 }
 
 function render () {
@@ -222,18 +226,7 @@ function selectDifficulty (evt) {
         updateStreakNumber('zero')
     }
     const selectedDifficulty = parseInt(evt.target.value.replace('level ', ''))
-    secretWord = getWord(selectedDifficulty)
-    hintPool = secretWord.split('')
-    guessNumber = 0
-    letterTurn = 0
-    win = false
-    hintsAvailable = 1
-    updateHintButton ()
-    submitReady()
-    setBoardArr()
-    clearGuesses()
-    resetBackground()
-    render ()
+    difficulty = selectedDifficulty
 }
 
 function notARealWord (isItARealWord) {
