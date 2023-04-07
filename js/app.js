@@ -227,7 +227,7 @@ function selectDifficulty (evt) {
     }
     const selectedDifficulty = parseInt(evt.target.value.replace('level ', ''))
     difficulty = selectedDifficulty
-    init(difficulty)
+    init (difficulty)
 }
 
 function notARealWord (isItARealWord) {
